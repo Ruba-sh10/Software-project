@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Plan - Fitness Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="script.js"></script>
+    <style>
+        * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: Arial, sans-serif;
+       }
+       body {
+           background-color:   #eaeded;
+           display: flex;
+           flex-direction: column;
+           min-height: 100vh;
+       }
+       .header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+           background: #e7edee;
+           color: white;
+           position: fixed;
+           top: 0;
+           width: 100%;
+           z-index: 1000;
+       }
+       .header-left {
+           display: flex;
+           align-items: center;
+       }
+       .header img {
+           height: 50px;
+           margin-right: 10px;
+       }
+       .header h1 {
+           font-size: 20px;
+           font-weight: bold;
+       }
+       .header button {
+           background:  #377680;
+           color: #e7edee;
+           border: none;
+           padding: 15px 20px;
+           cursor: pointer;
+           border-radius: 5px;
+           font-size: 14px;
+           
+       }
+
+       .footer {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+           background:#3f7e88;
+           color: white;
+           position: fixed;
+           bottom: 0;
+           width: 100%;
+       }
+       .footer-logos img {
+           height: 30px;
+           margin-left: 10px;
+       }
+       .visible {
+           opacity: 1;
+           transform: translateY(0);
+       }
+       .content {
+           flex-grow: 1;
+           padding-bottom: 60px; /* Space for the footer */
+       }
+   </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img src="logoosw.png" alt="Logo">
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="dashboard.html" style="text-decoration: none; color: inherit;">Dashboard</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="workouts.html" style="text-decoration: none; color: inherit;">Workouts</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="meals.html" style="text-decoration: none; color: inherit;">Meals</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="progress.html" style="text-decoration: none; color: inherit;">Progress</a>
+            </h1>
+        </div>
+        <div>
+            <button onclick="location.href='homepage.html'">Logout</button>
+        </div>
+    </div>
+    
+    
+    
+    <div class="week-schedule">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+    </div>
+    <div class="fitness-goal-bar">
+        <button class="goal-option">Lose Weight</button>
+        <button class="goal-option">Maintain Weight</button>
+        <button class="goal-option">Gain Weight</button>
+    </div>
+
+    <div class="content">
+        <h2>Suggested Plan</h2>
+        
+        <div class="exercise-overview">
+            <div class="exercise" data-name="Push-ups">
+                <img src="images/pushups.jpg" alt="Push-ups">
+                <p>Push-ups</p>
+                <p>Calories Burned: 100</p>
+                <p>Reps: 3x</p>
+            </div>
+            <div class="exercise" data-name="Squats">
+                <img src="images/squats.jpg" alt="Squats">
+                <p>Squats</p>
+                <p>Calories Burned: 120</p>
+                <p>Reps: 4x</p>
+            </div>
+            <div class="exercise" data-name="Jumping Jacks">
+                <img src="images/jumpingjacks.jpg" alt="Jumping Jacks">
+                <p>Jumping Jacks</p>
+                <p>Calories Burned: 90</p>
+                <p>Reps: 2x</p>
+            </div>
+            <div class="exercise" data-name="Plank">
+                <img src="images/plank.jpg" alt="Plank">
+                <p>Plank</p>
+                <p>Calories Burned: 80</p>
+                <p>Duration: 30 sec</p>
+            </div>
+        </div>
+
+        <h2>Add More Workouts</h2>
+        
+        <div class="exercise-list">
+            <div class="exercise" data-name="Push-ups">
+                <img src="images/pushups.jpg" alt="Push-ups">
+                <p>Push-ups</p>
+                <p>Calories Burned: 100</p>
+                <p>Reps: 3x</p>
+            </div>
+            <div class="exercise" data-name="Squats">
+                <img src="images/squats.jpg" alt="Squats">
+                <p>Squats</p>
+                <p>Calories Burned: 120</p>
+                <p>Reps: 4x</p>
+            </div>
+            <div class="exercise" data-name="Plank">
+                <img src="images/plank.jpg" alt="Plank">
+                <p>Plank</p>
+                <p>Calories Burned: 80</p>
+                <p>Duration: 30 sec</p>
+            </div>
+        </div>
+
+        <button id="done-btn">Done</button>
+    </div>
+    <div class="footer">
+        <div> Copyright &copy; 2025 GoalFit. All Rights Reserved.</div>
+        <div class="footer-logos">
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-facebook-f" style="font-size: 16px;"></i>
+            </a>
+          
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-instagram" style="font-size: 16px;"></i>
+            </a>
+            <a href="mailto:info@goalfit.com" style="margin: 0 10px; border: 2px solid  #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fas fa-envelope" style="font-size: 16px;"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-whatsapp" style="font-size: 16px;"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.goal-option').forEach(button => {
+            button.addEventListener('click', () => {
+                alert(`You selected: ${button.textContent}`);
+            });
+        });
+    </script> 
+</body>
+</html>

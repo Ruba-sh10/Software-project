@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Home - Fitness Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #eaeded;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #e7edee;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .header button {
+            background: #377680;
+            color: #e7edee;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .hero {
+            text-align: center;
+            flex-grow: 1;
+            margin-top: 80px;
+        }
+        .hero img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background: #eaeded;
+            gap: 30px; /* Increased gap for larger circles */
+        }
+        .feature {
+            text-align: center;
+            width: 180px; /* Larger width for circular shape */
+            height: 180px; /* Larger height for circular shape */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+            background: #e7edee;
+            padding: 20px;
+            border-radius: 50%; /* Circular shape */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature img {
+            width: 80px; /* Larger image size for circular feature */
+            height: 80px;
+            margin-bottom: 10px;
+            /* Removed border-radius to make the image square */
+        }
+        .feature h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .feature p {
+            font-size: 14px;
+            margin: 0;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #3f7e88;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer-logos img {
+            height: 30px;
+            margin-left: 10px;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .content {
+            flex-grow: 1;
+            padding-bottom: 60px; /* Space for the footer */
+        }
+        .rectangle-container {
+            background: #e7edee;
+            padding: 30px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .rectangle-container h2 {
+            font-size: 24px;
+            color: #377680;
+            margin-bottom: 15px;
+        }
+        .rectangle-container p {
+            font-size: 16px;
+            color: #333;
+        }
+        .bar-chart {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin: 30px auto;
+            width: 80%;
+            max-width: 800px;
+            height: 200px;
+            gap: 10px;
+        }
+        .bar {
+            flex: 1;
+            background: #3f7e88;
+            border-radius: 5px 5px 0 0;
+            position: relative;
+        }
+        .bar-label {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #333;
+        }
+        .daily-reminder {
+            background: #e7edee;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .daily-reminder h3 {
+            font-size: 18px;
+            color: #377680;
+            margin-bottom: 10px;
+        }
+        .daily-reminder p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let features = document.querySelectorAll(".feature");
+            features.forEach((feature, index) => {
+                setTimeout(() => {
+                    feature.classList.add("visible");
+                }, index * 300);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img src="logoosw.png" alt="Logo">
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="dashboard.html" style="text-decoration: none; color: inherit;">Dashboard</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="workouts.html" style="text-decoration: none; color: inherit;">Workouts</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="meals.html" style="text-decoration: none; color: inherit;">Meals</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="progress.html" style="text-decoration: none; color: inherit;">Progress</a>
+            </h1>
+        </div>
+        <div>
+            <button onclick="location.href='homepage.html'">Logout</button>
+        </div>
+    </div>
+    <div class="hero">
+        <img src="gym.jpg" alt="Fitness Illustration">
+    </div>
+
+    <div class="content">
+        <div class="features">
+            <!-- First Row -->
+            <div class="feature">
+                <img src="calorie.png" alt="Feature 1">
+                <h3>calories</h3>
+                <p>1547 cal</p>
+            </div>
+            <div class="feature">
+                <img src="protien.png" alt="Feature 2">
+                <h3>protein</h3>
+                <p>90g</p>
+            </div>
+            <div class="feature">
+                <img src="fat.png" alt="Feature 3">
+                <h3>fat</h3>
+                <p>56g</p>
+            </div>
+            <!-- Second Row -->
+            <div class="feature">
+                <img src="carbs.png" alt="Feature 4">
+                <h3>carbs</h3>
+                <p>270g</p>
+            </div>
+            <div class="feature">
+                <img src="water.png" alt="Feature 5">
+                <h3>water</h3>
+                <p>1.5 L</p>
+            </div>
+            <div class="feature">
+                <img src="steps.png" alt="Feature 6">
+                <h3>steps</h3>
+                <p>3890 </p>
+            </div>
+        </div>
+
+        <!-- Rectangle Container -->
+        <div class="rectangle-container">
+            <h2>motivational message</h2>
+            <p>
+                "Every small step counts. Stay consistent, stay strong, and trust the process. You are closer to your goals than you think—keep pushing forward!"        </p>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="bar-chart">
+            <div class="bar" style="height: 80%;"><div class="bar-label">Mon</div></div>
+            <div class="bar" style="height: 60%;"><div class="bar-label">Tue</div></div>
+            <div class="bar" style="height: 90%;"><div class="bar-label">Wed</div></div>
+            <div class="bar" style="height: 50%;"><div class="bar-label">Thu</div></div>
+            <div class="bar" style="height: 70%;"><div class="bar-label">Fri</div></div>
+            <div class="bar" style="height: 85%;"><div class="bar-label">Sat</div></div>
+            <div class="bar" style="height: 75%;"><div class="bar-label">Sun</div></div>
+        </div>
+
+        <!-- Daily Reminder -->
+        <div class="daily-reminder">
+            <h3>Daily Reminder</h3>
+            <p>Don't forget to complete your workout today! Stay consistent and motivated.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div> Copyright &copy; 2025 GoalFit. All Rights Reserved.</div>
+        <div class="footer-logos">
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-facebook-f" style="font-size: 16px;"></i>
+            </a>
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-instagram" style="font-size: 16px;"></i>
+            </a>
+            <a href="mailto:info@goalfit.com" style="margin: 0 10px; border: 2px solid  #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fas fa-envelope" style="font-size: 16px;"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-whatsapp" style="font-size: 16px;"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

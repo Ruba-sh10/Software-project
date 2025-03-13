@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <title>Home - Fitness Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color:   #eaeded;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+    display: flex;
+    justify-content: center; /* This centers the logo horizontally */
+    align-items: center;
+    padding: 20px;
+    background: #e7edee;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            height: 50px;
+           
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .header button {
+            background:  #377680;
+            color: #e7edee;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            
+        }
+        .hero {
+            text-align: center;
+            flex-grow: 1;
+            margin-top: 80px;
+        }
+        .hero img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .cta-button {
+            background:#3f7e88;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background:  #eaeded;
+        }
+        .feature {
+            text-align: center;
+            width: 300px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+            background:  #e7edee;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .feature img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background:#3f7e88;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer-logos img {
+            height: 30px;
+            margin-left: 10px;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .content {
+            flex-grow: 1;
+            padding-bottom: 60px; /* Space for the footer */
+        }
+        .login-form {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background:  #e7edee;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-form h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .login-form button {
+            background: #377680;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .login-form button:hover {
+            background: #2b5e64;
+        }
+    
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let features = document.querySelectorAll(".feature");
+            features.forEach((feature, index) => {
+                setTimeout(() => {
+                    feature.classList.add("visible");
+                }, index * 300);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left ">
+            <img src="logoosw.png" alt="Logo">
+            
+        </div>
+        <div >
+            <h1 style="text-align: left; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: xx-large; color: #377680;">GoalFit</h1>
+
+        </div>
+       
+    </div>
+
+    <div class="hero">
+        <img src="gym.jpg" alt="Fitness Illustration">
+    </div>
+    <div class="login-form">
+        <h2>personal information</h2>
+        <form onsubmit="redirectToDashboard(event)">
+            <label for="age">Enter your age:</label>
+            <input type="number" id="age" name="age" required>
+        
+            <label for="weight">Enter your weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+        
+            <label for="bmi">Enter your BMI:</label>
+            <input type="number" id="bmi" name="bmi" step="0.1" required>
+        
+            <label for="goal">What is your goal? <br> <br></label>
+            <select id="goal" name="goal" required>
+                <option value="lose_weight">Lose weight</option>
+                <option value="maintain_weight">Maintain weight</option>
+                <option value="gain_weight">Gain weight</option>
+            </select> <br> <br>
+        
+            <label for="diet">What is your preferable diet?<br> <br></label>
+            <select id="diet" name="diet" required>
+                <option value="keto">Keto</option>
+                <option value="calorie_deficit">Calorie Deficit</option>
+                <option value="vegan">Vegan</option>
+            </select>
+            <br> <br>
+        
+            <button type="submit">Submit</button>
+        </form>
+        
+        <script>
+            function redirectToDashboard(event) {
+                event.preventDefault(); // Prevent form submission
+                window.location.href = "dashboard.html"; // Redirect to dashboard
+            }
+        </script>
+        
+    </div>
+   
+    <div class="footer">
+        <div> Copyright &copy; 2025 Fitness Tracker. All Rights Reserved.</div>
+        <div class="footer-logos">
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-facebook-f" style="font-size: 16px;"></i>
+            </a>
+            <a href="#" style="margin: 0 10px; border: 2px solid  #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-twitter" style="font-size: 16px;"></i>
+            </a>
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-instagram" style="font-size: 16px;"></i>
+            </a>
+            <a href="mailto:info@clinicname.com" style="margin: 0 10px; border: 2px solid  #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fas fa-envelope" style="font-size: 16px;"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-whatsapp" style="font-size: 16px;"></i>
+            </a>
+        </div>
+    </div>
+    
+</body>
+
+
+
+
+</html>

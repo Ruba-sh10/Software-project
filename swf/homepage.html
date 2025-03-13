@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <title>Home - Fitness Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color:   #eaeded;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            padding: 20px;
+            background: #e7edee;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .header button {
+            background:  #377680;
+            color: #e7edee;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            
+        }
+       
+        .cta-button {
+            background:#3f7e88;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background:  #eaeded;
+        }
+        .feature {
+            text-align: center;
+            width: 300px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+            background:  #e7edee;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .feature img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background:#3f7e88;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer-logos img {
+            height: 30px;
+            margin-left: 10px;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .content {
+            flex-grow: 1;
+            padding-bottom: 60px; /* Space for the footer */
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let features = document.querySelectorAll(".feature");
+            features.forEach((feature, index) => {
+                setTimeout(() => {
+                    feature.classList.add("visible");
+                }, index * 300);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img src="logoosw.png" alt="Logo">
+            
+        </div>
+        <div >
+            <h1 style="text-align: center; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: xx-large; color: #377680;">GoalFit</h1>
+
+        </div>
+        <div>
+            <button onclick="location.href='login.html'">Log In</button>
+            <button onclick="location.href='signup.html'">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="home.webp" alt="Fitness Illustration">
+    </div>
+
+    <div class="content">
+        <div class="features">
+            <div class="feature">
+                <h3>progress</h3>
+                <img src="feature1.png" alt="Feature 1">
+                <p style="font-weight: bold; font-family:Cambria ; color: #377680; ">we help track and analyze your monthly progress!</p>
+            </div>
+            <div class="feature">
+                <h3>meals</h3>
+                <img src="featrue2.png" alt="Feature 2">
+                <p style="font-weight: bold; font-family:Cambria ; color: #377680; ">we generate a specific diet plan based on your interests!</p>
+            </div>
+            <div class="feature">
+                <h3>workouts</h3>
+                <img src="feature3.png" alt="Feature 3">
+                <p style="font-weight: bold; font-family:Cambria ; color: #377680; ">we design a workout plan to help you achive your goal! </p>
+            </div>
+        </div>
+
+      
+    </div>
+    <div class="footer">
+        <div> Copyright &copy; 2025 Fitness Tracker. All Rights Reserved.</div>
+        <div class="footer-logos">
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-facebook-f" style="font-size: 16px;"></i>
+            </a>
+            <a href="#" style="margin: 0 10px; border: 2px solid  #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-twitter" style="font-size: 16px;"></i>
+            </a>
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-instagram" style="font-size: 16px;"></i>
+            </a>
+            <a href="mailto:info@clinicname.com" style="margin: 0 10px; border: 2px solid  #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fas fa-envelope" style="font-size: 16px;"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-whatsapp" style="font-size: 16px;"></i>
+            </a>
+        </div>
+    </div>
+    
+</body>
+
+
+
+
+</html>

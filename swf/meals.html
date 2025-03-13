@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan - Fitness Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="meals.js"></script>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color:   #eaeded;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #e7edee;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .header button {
+            background:  #377680;
+            color: #e7edee;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background:#3f7e88;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer-logos img {
+            height: 30px;
+            margin-left: 10px;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .content {
+            flex-grow: 1;
+            padding-bottom: 60px; /* Space for the footer */
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="header">
+        <div class="header-left">
+            <img src="logoosw.png" alt="Logo">
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="dashboard.html" style="text-decoration: none; color: inherit;">Dashboard</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="workouts.html" style="text-decoration: none; color: inherit;">Workouts</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="meals.html" style="text-decoration: none; color: inherit;">Meals</a>
+            </h1>
+        </div>
+        <div>
+            <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #377680;">
+                <a href="progress.html" style="text-decoration: none; color: inherit;">Progress</a>
+            </h1>
+        </div>
+        <div>
+            <button onclick="location.href='homepage.html'">Logout</button>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h2>Select Your Meal Plan</h2>
+
+        
+        <div class="week-schedule">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+        </div>
+
+        <div class="meal-container">
+            
+            <table class="meal-table">
+                <thead>
+                    <tr>
+                        <th>Meal</th>
+                        <th>Calories</th>
+                        <th>Protein</th>
+                        <th>Carbs</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="meal-option" data-meal="Grilled Chicken">
+                        <td>Grilled Chicken</td>
+                        <td>350</td>
+                        <td>40g</td>
+                        <td>15g</td>
+                        <td><button class="select-meal">View</button></td>
+                    </tr>
+                    <tr class="meal-option" data-meal="Vegetable Salad">
+                        <td>Vegetable Salad</td>
+                        <td>200</td>
+                        <td>10g</td>
+                        <td>25g</td>
+                        <td><button class="select-meal">View</button></td>
+                    </tr>
+                    <tr class="meal-option" data-meal="Oatmeal">
+                        <td>Oatmeal</td>
+                        <td>250</td>
+                        <td>12g</td>
+                        <td>40g</td>
+                        <td><button class="select-meal">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+            <div class="meal-suggestions">
+                
+<h3>Healthy Eating Suggestions</h3>
+<table class="suggestions-table">
+    <thead>
+        <tr>
+            <th>Tip</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Drink at least 8 glasses of water daily</td>
+            <td>Hydration</td>
+        </tr>
+        <tr>
+            <td>Include more fiber-rich foods like vegetables & fruits</td>
+            <td>Nutrition</td>
+        </tr>
+        <tr>
+            <td>Eat lean proteins such as chicken, fish, and beans</td>
+            <td>Protein Intake</td>
+        </tr>
+        <tr>
+            <td>Reduce sugar intake and avoid processed foods</td>
+            <td>Healthy Eating</td>
+        </tr>
+    </tbody>
+</table>
+
+        </div>
+
+        
+        <div id="meal-details" class="meal-details hidden">
+            <h2 id="meal-name"></h2>
+            <img id="meal-image" src="" alt="Meal Image">
+            <p><strong>Calories:</strong> <span id="meal-calories"></span></p>
+            <p><strong>Protein:</strong> <span id="meal-protein"></span></p>
+            <p><strong>Carbs:</strong> <span id="meal-carbs"></span></p>
+            <p><strong>Ingredients:</strong> <span id="meal-ingredients"></span></p>
+            <button id="close-details">Close</button>
+            <button id="select-meal-btn">Select Meal</button>
+    
+        </div>
+    </div>
+
+    
+    <div class="footer">
+        <div> Copyright &copy; 2025 GoalFit. All Rights Reserved.</div>
+        <div class="footer-logos">
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-facebook-f" style="font-size: 16px;"></i>
+            </a>
+          
+            <a href="#" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-instagram" style="font-size: 16px;"></i>
+            </a>
+            <a href="mailto:info@goalfit.com" style="margin: 0 10px; border: 2px solid  #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fas fa-envelope" style="font-size: 16px;"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" style="margin: 0 10px; border: 2px solid #bdc5c7; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: #bdc5c7;">
+                <i class="fab fa-whatsapp" style="font-size: 16px;"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
